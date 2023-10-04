@@ -1,3 +1,3 @@
 # MERN-API
-MERN stack API, developed with Node.js .
+API for MERN Stack, developed with Node.js .
 
