@@ -14,6 +14,12 @@ app.use(cors());
 app.use("/auth",userRouter);
 app.use("/recipes",recipesRouter);
 
-mongoose.connect(`mongodb+srv://${process.env.NICK}:${process.env.PASSWORD}@recipesdb.i1fcuil.mongodb.net/recipesDB?retryWrites=true&w=majority&appName=AtlasApp`,()=>console.log("Server'a Bağlandı"));
+mongoose.connect(`mongodb+srv://${process.env.NICK}:${process.env.PASSWORD}@recipesdb.i1fcuil.mongodb.net/recipesDB?retryWrites=true&w=majority&appName=AtlasApp`);
+
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error: "));
+db.once("open", function () {
+  console.log("Connected successfully");
+});
 
 app.listen(3001,()=>console.log("Server started !"))
