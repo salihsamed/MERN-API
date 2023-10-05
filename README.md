@@ -1,3 +1,3 @@
 # MERN-API
-API for MERN Stack, developed with Node.js and MongoDB .
+API for recipe app, developed with Node.js,Express.js and MongoDB .
 
